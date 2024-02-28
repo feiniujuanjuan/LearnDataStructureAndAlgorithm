@@ -17,7 +17,7 @@ const menu = reactive([
         title: '数组',
         children: [
           {
-            index: 'array/sparse',
+            index: '/array/sparse',
             title: '稀疏数组',
           }
         ]
@@ -35,9 +35,9 @@ const activeIndex = ref('1');
 export default function() {
   return (
     <el-menu active-text-color="#ffd04b" background-color="#545c64" class="el-menu-vertical-demo"
-      default-active={activeIndex} text-color="#fff" 
-      onOpen={(key, keyPath) => { handleOpen(key, keyPath) }}
-      onClose={(key, keyPath) => { handleClose(key, keyPath) }}>
+      default-active={activeIndex.value} text-color="#fff" router
+      onOpen={ (key, keyPath) => { handleOpen(key, keyPath) }}
+      onClose={ (key, keyPath) => { handleClose(key, keyPath) }}>
       {
         menu.map(item => {
           return <SidebarItem item={item}></SidebarItem>
@@ -48,6 +48,7 @@ export default function() {
 }
 const handleOpen = (key: string, keyPath: string[]) => {
   activeIndex.value = key;
+  console.log(key, keyPath)
 }
 const handleClose = (key: string, keyPath: string[]) => {
   console.log(key, keyPath)
