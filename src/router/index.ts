@@ -8,6 +8,12 @@ const router = createRouter({
       path: 'sparse',
       component: () => import('@/views/array/sparseArray.vue'),
     }]
+  }, {
+    path: '/queue',
+    children: [{
+      path: 'array',
+      component: () => import('@/views/queue/arrayQueue.vue'),
+    }]
   }]
 })
 

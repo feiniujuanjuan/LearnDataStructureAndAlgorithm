@@ -21,6 +21,16 @@ const menu = reactive([
             title: '稀疏数组',
           }
         ]
+      },
+      {
+        index: '1-2',
+        title: '队列',
+        children: [
+          {
+            index: '/queue/array',
+            title: '用数组模拟队列',
+          },
+        ]
       }
     ]
   },
